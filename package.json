@@ -4,13 +4,13 @@
 	"description": "A description for your project.",
 	"main": "./dist/your-main-js-file.js",
 	"author": {
-		"name": "YOUR NAME",
-		"url": "http://link-to-your-website.com"
+		"name": "Siphosenkosi Ndhlovu",
+		"url": "http://siphosenkosi.com"
 	},
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "http://link-to-your-git-repo.com"
+		"url": "https://github.com/siphosenkosindhlovu/gulp-boilerplate.git"
 	},
 	"boilerplate": {
 		"version": "2.2.6",
@@ -30,6 +30,7 @@
 		"gulp": "4.0.2",
 		"gulp-concat": "2.6.1",
 		"gulp-ejs": "^5.1.0",
+		"gulp-env": "^0.4.0",
 		"gulp-flatmap": "1.0.2",
 		"gulp-header": "2.0.5",
 		"gulp-if": "^3.0.0",
@@ -46,13 +47,16 @@
 		"jshint-stylish": "2.2.1",
 		"lazypipe": "1.0.1",
 		"node-sass": "4.13.0",
+		"postcss": "^8.1.2",
 		"postcss-extend-rule": "^3.0.0",
+		"postcss-font-magician": "^3.0.0",
 		"postcss-import": "^12.0.1",
 		"postcss-nested": "^5.0.1",
 		"precss": "^4.0.0",
 		"yargs": "^16.0.3"
 	},
 	"dependencies": {
+		"rfs": "^9.0.3",
 		"tailwindcss": "^1.9.1"
 	}
 }
