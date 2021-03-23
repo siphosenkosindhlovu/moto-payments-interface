@@ -9,3 +9,5 @@ test/coverage
 .Spotlight-V100
 .Trashes
 dist
+dist/css/main.css
+dist/css/main.css
