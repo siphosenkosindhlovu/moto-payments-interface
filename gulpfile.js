@@ -26,7 +26,7 @@ var paths = {
     output: 'dist/js/',
   },
   styles: {
-    input: 'src/styles/**/*.css',
+    input: 'src/styles/**/*.scss',
     output: 'dist/css/',
   },
   images: {
@@ -204,6 +204,7 @@ var buildStyles = function (done) {
 				envs
 			)
 		)
+    .pipe(sass())
     .pipe(
       postcss([
         require('precss'),
