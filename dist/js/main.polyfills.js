@@ -1,8 +1,4 @@
-/*! project-name v0.0.1 | (c) 2020 YOUR NAME | MIT License | http://link-to-your-git-repo.com */
-document.addEventListener('click', (function (event) {
-	if (!event.target.matches('#click-me')) return;
-	alert('You clicked me!');
-}), false);
+/*! project-name v0.0.1 | (c) 2021 Siphosenkosi Ndhlovu | MIT License | https://github.com/siphosenkosindhlovu/gulp-boilerplate.git */
 /**
  * Element.matches() polyfill (simple version)
  * https://developer.mozilla.org/en-US/docs/Web/API/Element/matches#Polyfill
@@ -10,3 +6,7 @@ document.addEventListener('click', (function (event) {
 if (!Element.prototype.matches) {
 	Element.prototype.matches = Element.prototype.msMatchesSelector || Element.prototype.webkitMatchesSelector;
 }
+document.addEventListener('click', (function (event) {
+	if (!event.target.matches('#click-me')) return;
+	alert('You clicked me!');
+}), false);

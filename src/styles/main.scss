@@ -1,0 +1,73 @@
+
+$input-bg: #ABC5FF;
+
+$font-sizes: (
+    xxs: '8px',
+    xs: '12px',
+    sm: '14px',
+    base: '16px',
+    md: '20px',
+    2md: '25px',
+    lg: '35px',
+    2lg: ' 50px'
+);
+
+$spacers : (
+    6: 3.75rem,
+    10: 6.25rem
+);
+
+$sizes : (
+    screen: 100vh,
+);
+
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "components/base";
+
+//Responsive Text Sizes
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+        $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+        @each $size, $value in $font-sizes {
+            .text#{$infix}-#{$size} {
+                font-size: $value;
+            }
+        }   
+    }
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+        $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+        @each $size, $value in $sizes {
+            .h#{$infix}-#{$size} {
+                height: $value;
+            }
+        }   
+    }
+}
+
+.card-container {
+
+}
+
+.credit-card {
+    width: 97%;
+    padding-top: 65%;
+    height: 0;
+    border-radius: 10pt;
+    @include media-breakpoint-up (lg) {
+        width: 100%
+    }
+}
+
+.card-front {
+    transform: translate(0, -100%);
+}
+
+.card-back {
+    transform: translate(10px, 40%);
+    background-image: url(/svg/card-bg-svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}

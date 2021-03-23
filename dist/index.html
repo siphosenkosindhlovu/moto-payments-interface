@@ -1,19 +1,81 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Copy Me</title>
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Copy Me</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
+
 <body>
-	<h1>Copy Me</h1>
 
-	<p>Anything you put in the <code>copy</code> directory gets copied as-is into the <code>dist</code> directory.</p>
+  <header class="bg-light bg-white position-absolute  w-100">
+    <div class="container">
+      <div class="navbar">
+        <a href="#" class="navbar-brand">
+          <img src="/svg/paymob-logo.svg" alt="" height="30px">
+        </a>
+        <nav class="navbar-nav">
+          <a href="#" class="navlink"><span class="material-icons material-icons-outlined">
+              logout
+            </span></a>
+        </nav>
+      </div>
+    </div>
+  </header>
 
-	<p><button id="click-me">Click Me</button></p>
+    <section class="container-fluid vh-100">
+        <div class="row h-100">
+            <div class="col-lg-5 d-none d-lg-block">
+                <img src="/svg/login-image.svg" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-3 offset-lg-1 h-100">
+                <div class="container h-100">
+                    <form action="sale.html" class="h-100 d-flex flex-column ">
+                        <div class="my-auto">
+                            <div class="text-center">
 
-	<!-- Scripts -->
-	<script src="js/detects.js"></script>
-	<script src="js/another-file.js"></script>
-	<script src="js/main.polyfills.js"></script>
+                                <h1 class="text-2md text-lg-2lg">
+                                    Virtual Terminal
+                                    <br> MOTO
+                                </h1>
+                                <p class="text-lg-2md">
+                                    Mail Order / Telephone Order
+                                </p>
+                                <h2 class="text-md text-lg-lg">
+                                    Merchant
+                                </h2>
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">
+                                        <img class="img-fluid" src="/svg/account_circle-24px-2.svg" alt="">
+                                    </span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                                    aria-describedby="basic-addon1">
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">
+                                        <img class="img-fluid" src="/svg/https-24px.svg" alt="">
+                                    </span>
+                                </div>
+                                <input type="password" class="form-control" placeholder="Password" aria-label="Password"
+                                    aria-describedby="basic-addon1">
+                            </div>
+                            <small id="emailHelp" class="form-text text-muted">Forgot Password?</small>
+
+                        </div>
+                        <button type="submit" class="btn btn-block btn-primary mt-auto mb-5">Sign In</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
 </body>
 </html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Copy Me</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+
+<body>
+
+  <header class="bg-light <% if(locals.login) { %>bg-white position-absolute <% } %> w-100">
+    <div class="container">
+      <div class="navbar">
+        <a href="#" class="navbar-brand">
+          <img src="/svg/paymob-logo.svg" alt="" height="30px">
+        </a>
+        <nav class="navbar-nav">
+          <a href="#" class="navlink"><span class="material-icons material-icons-outlined">
+              logout
+            </span></a>
+        </nav>
+      </div>
+    </div>
+  </header>

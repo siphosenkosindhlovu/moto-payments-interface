@@ -1,0 +1,46 @@
+<%- include('./includes/header.ejs') %>
+
+<main class="container py-6 py-lg-10">
+    <h1 class="text-2md text-lg-2lg mb-5 mb-lg-10">
+        Sale
+    </h1>
+    <div>
+        <form action="">
+            <div class="form-group">
+                <label for="">
+                    Amount
+                </label>
+                <div class="form-row">
+                    <div class="col-9 input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">
+                                &pound;
+                            </span>
+                        </div>
+                        <input type="number" class="form-control" value="0.00" aria-label="Username"
+                            aria-describedby="basic-addon1">
+                    </div>
+                    <div class="col-3">
+                        <div class="form-group">
+                            <select class="custom-select">
+                                <option  selected value="&pound;">GBP</option>
+                                <option value="&dollar;">USD</option>
+                                <option value="&#8381;">RUB</option>
+                              </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-container">
+                    <div class="credit-card card-back">
+                        
+                    </div>
+                    <div class="credit-card card-front">
+
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </form>
+    </div>
+</main>
