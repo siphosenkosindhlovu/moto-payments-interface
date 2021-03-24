@@ -1,33 +1,35 @@
 <%- include('./includes/header.ejs') %>
 
     <main class="container py-6 py-lg-10">
-        <h1 class="text-2md text-lg-2lg mb-5 mb-lg-10">
+        <h1 class="text-2md text-lg-2lg mb-5 mb-lg-10 text-info font-weight-bold">
             Sale
         </h1>
         <div>
-            <form action="">
+            <form action="/success.html" name="credit-card">
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-lg-4">
                         <div class="form-group mb-6">
-                            <label for="">
+                            <label for="" class="text-primary text-md text-lg-lg font-weight-bold">
                                 Amount
                             </label>
                             <div class="form-row">
-                                <div class="col-6 input-group mb-3 text-2md">
+                                <div class="col-6 input-group mb-0 text-2md">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text font-weight-bold text-2md" id="basic-addon1">
+                                        <span class="input-group-text font-weight-bold text-2md" id="currencyDisplay">
                                             &pound;
                                         </span>
                                     </div>
-                                    <input type="number" class="form-control font-weight-bold text-2md" value="0.00"
+                                    <input id="amount" name="amount" type="number"
+                                        class="form-control font-weight-bold text-2md" value="0.00"
                                         aria-label="Username" aria-describedby="basic-addon1">
                                 </div>
                                 <div class="col-2">
-                                    <div class="form-group">
-                                        <select class="custom-select font-weight-bold text-2md">
-                                            <option selected value="&pound;">GBP</option>
-                                            <option value="&dollar;">USD</option>
-                                            <option value="&#8381;">RUB</option>
+                                    <div class="form-group mb-0">
+                                        <select id="currency"
+                                            class="custom-select font-weight-bold text-2md text-secondary bg-light-alt">
+                                            <option selected value="GBP">GBP</option>
+                                            <option value="USD">USD</option>
+                                            <option value="RUB">RUB</option>
                                         </select>
                                     </div>
                                 </div>
@@ -37,32 +39,31 @@
 
                 </div>
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="card-container mb-10">
+                    <div class="col-lg-6">
+                        <div class="card-container mb-lg-10">
                             <div class="credit-card card-back">
                                 <div>
                                     <div class="d-flex justify-content-end align-items-end">
-                                        <small id="helpId" class="text-white mr-3 w-50">3-digits security card from the
+                                        <small id="CVChelp" class="text-white mr-3 w-50">3-digits security card from the
                                             back:</small>
                                         <div style="width: 70px">
-                                            <label for="">CVC/CVV</label>
-                                            <input type="number" maxlength="3" minlength="3" name="" id=""
-                                                class="form-control" placeholder="" aria-describedby="helpId">
+                                            <label for="CVC">CVC/CVV</label>
+                                            <input type="tel" name="CVC" id="CVC" class="form-control masked" placeholder="XXX" aria-describedby="CVChelp">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="credit-card card-front">
-                                <div>
+                                <div class="">
                                     <div class="form-group">
-                                        <label class="small" for="">Card Number</label>
-                                        <input type="number" name="" id="" class="form-control" placeholder=""
-                                            aria-describedby="helpId">
+                                        <label class="small" for="card-number">Card Number</label>
+                                        <input type="tel" name="card-number" id="card-number" class="card-number form-control masked" placeholder="XXXX XXXX XXXX XXXX">
                                     </div>
                                     <div class="form-group">
-                                        <label class="small" for="">Card Expiry</label>
-                                        <input type="date" name="" id="" class="form-control w-auto" placeholder=""
-                                            aria-describedby="helpId">
+                                        <label class="small" for="expiry">Card Expiry</label>
+                                        <input type="tel" name="expiry" id="expiry" class="form-control w-auto expiry-month masked"
+                                            placeholder="MM/YY" pattern="(1[0-2]|0[1-9])\/(1[5-9]|2\d)"
+                                            data-valid-example="05/22">
                                     </div>
                                 </div>
                             </div>
@@ -70,14 +71,15 @@
                     </div>
                 </div>
 
-                <div>
-                    <button class="btn btn-primary btn-lg">
+                <div class="d-flex d-md-block">
+                    <button class="btn btn-primary btn-lg disabled w-50 w-md-auto mr-1">
                         Cancel
                     </button>
-                    <button class="btn btn-primary btn-lg">
+                    <button class="btn btn-primary btn-lg w-50 w-md-auto ml-1">
                         Charge
                     </button>
                 </div>
             </form>
         </div>
     </main>
+    <%- include('./includes/footer.ejs') %>

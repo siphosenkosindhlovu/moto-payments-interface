@@ -936,6 +936,11 @@ caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000865, caniuse-lite@^1.0.30000981, can
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001148.tgz#dc97c7ed918ab33bf8706ddd5e387287e015d637"
   integrity sha512-E66qcd0KMKZHNJQt9hiLZGE3J4zuTqE1OnU53miEVtylFbwOEmeA5OsRu90noZful+XGSQOni1aT2tiqu/9yYw==
 
+card-js@^1.0.13:
+  version "1.0.13"
+  resolved "https://registry.yarnpkg.com/card-js/-/card-js-1.0.13.tgz#22e459783086e044a5406684e6cf29e3dfce97e1"
+  integrity sha1-IuRZeDCG4ESlQGaE5s8p49/Ol+E=
+
 caseless@~0.12.0:
   version "0.12.0"
   resolved "https://registry.yarnpkg.com/caseless/-/caseless-0.12.0.tgz#1b681c21ff84033c826543090689420d187151dc"

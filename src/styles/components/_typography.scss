@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "Circe";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Circe"), url("../fonts/CRC55.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Gotham Pro";
+  src: url("GothamPro-Bold.eot");
+  src: local("../fonts/Gotham Pro Bold"), local("GothamPro-Bold"), url("../fonts/GothamPro-Bold.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/GothamPro-Bold.woff") format("woff"), url("../fonts/GothamPro-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}

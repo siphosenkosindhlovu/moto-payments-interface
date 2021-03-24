@@ -2,7 +2,16 @@ $input-bg: #abc5ff;
 $primary: rgba(255, 88, 51, 1);
 $info: rgba(41, 80, 175, 1);
 $success: rgba(41, 175, 103, 1);
-$secondary: #9AA0A6;
+$secondary: rgba(154, 160, 166, 1);
+$light: rgba(154, 160, 166, 0.1);
+$light-alt: rgba(154, 160, 166, 0.3);
+
+$theme-colors: (
+    "light-alt": $light-alt,
+);
+
+$headings-font-weight: bold;
+
 $font-sizes: (
     xxs: 8px,
     xs: 12px,
@@ -26,36 +35,37 @@ $sizes: (
 $grid-columns: 8;
 
 $grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 1024px,
-  xl: 1400px
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 1024px,
+    xl: 1400px,
 ) !default;
 
 $container-max-widths: (
-  md: 600px,
-  lg: 960px,
-  xl: 1200px
+    md: 600px,
+    lg: 960px,
+    xl: 1200px,
 ) !default;
 
 //$input-group-addon-color:               $input-color !default;
-$input-group-addon-bg:                  rgba(171, 197, 255, 0.3);
-$input-group-addon-border-color:       rgba(171, 197, 255, 0.3);
+$input-group-addon-bg: rgba(171, 197, 255, 0.3);
+$input-group-addon-border-color: rgba(171, 197, 255, 0.3);
 $input-bg: rgba(171, 197, 255, 0.3);
-$input-border-color:   rgba(171, 197, 255, 0.3);
-$input-height-lg:  50px;
-$input-color: rgba(41, 80, 175, 0.6);
+$input-border-color: rgba(171, 197, 255, 0.3);
+$input-height-lg: 50px;
+$input-color: rgba(41, 80, 175, 1);
 $input-border-width: 0px;
 
-$btn-padding-x-lg:   3rem;
+$btn-padding-x-lg: 2.5rem;
 
 $border-radius: 10px;
 $border-radius-lg: 10px;
 $input-border-radius-lg: 10px;
-
+$font-family-sans-serif: "Gotham Pro",  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 @import "components/base";
+@import "components/typography";
 
 //Responsive Text Sizes
 @each $breakpoint in map-keys($grid-breakpoints) {
@@ -74,10 +84,10 @@ $input-border-radius-lg: 10px;
         $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
         @each $size, $value in $sizes {
             .h#{$infix}-#{$size} {
-                height: $value;
+                height: $value !important;
             }
             .w#{$infix}-#{$size} {
-                width: $value;
+                width: $value !important;
             }
         }
     }
@@ -92,12 +102,64 @@ $input-border-radius-lg: 10px;
     }
 }
 
+$fractions-of-12: 1, 2, 3, 4, 5, 6, 7, 8;
+@each $breakpoint, $container-max-width in $container-max-widths {
+    @include media-breakpoint-up($breakpoint) {
+        @each $fraction in $fractions-of-12 {
+            .container-#{$breakpoint}-#{$fraction} {
+                padding-right: 8px;
+                padding-left: 8px;
+                margin-right: auto;
+                margin-left: auto;
+                width: 100%;
+            }
+        }
+        $extend-breakpoint: true;
+        @each $name, $width in $grid-breakpoints {
+            @if ($extend-breakpoint) {
+                @each $fraction in $fractions-of-12 {
+                    .container-#{$name}-#{$fraction} {
+                        @if ($fraction < 4) {
+                            max-width: map-get($container-max-widths, $breakpoint) * ($fraction / 8);
+                        } @else {
+                            max-width: calc(
+                                #{(map-get($container-max-widths, $breakpoint) / 2)} +
+                                    #{((($fraction - 4) / 8) * 100)}#{"%"}
+                            );
+                        }
+                    }
+                }
+                @if ($breakpoint == $name) {
+                    $extend-breakpoint: false;
+                }
+            }
+        }
+        // .container-#{$breakpoint}-#{$fraction} {
+        //   @if (map-get($container-max-widths, $breakpoint) != null) {
+        //     max-width: calc(#{(map-get($container-max-widths, $breakpoint) / 2)} + #{(($fraction - 6) / 12) * 100}#{"%"});
+        //   }
+        // }
+    }
+}
+.text-sans {
+    font-family: $font-family-sans-serif;
+}
+label, .label, .text-sans-alt {
+    font-family: 'Circe', sans-serif;
+}
+
 .btn {
     font-weight: bold;
+    &:disabled,
+    &.disabled {
+        background-color: hsla(210, 6%, 63%, 0.3);
+        color: hsl(210, 6%, 63%);
+        border-color: hsla(210, 6%, 63%, 0.3);
+    }
 }
 
 .card-container {
-    @include media-breakpoint-up(md){
+    @include media-breakpoint-up(md) {
         display: grid;
         grid-template-areas: "front back";
         gap: 1rem;
@@ -152,7 +214,7 @@ $input-border-radius-lg: 10px;
 
     background-color: rgba(0, 0, 0, 0.1);
 
-    @include media-breakpoint-up(md){
+    @include media-breakpoint-up(md) {
         grid-area: front;
     }
 }
@@ -171,7 +233,29 @@ $input-border-radius-lg: 10px;
         padding: 1rem 1.25rem;
     }
 
-    @include media-breakpoint-up(md){
-        grid-area: back
+    @include media-breakpoint-up(md) {
+        grid-area: back;
     }
+}
+
+
+
+.shell {
+    position: relative;
+    line-height: 1;
+    display: block;
+}
+
+.shell span {
+    position: absolute;
+    left: 3px;
+    top: 4px;
+    color: #ccc;
+    pointer-events: none;
+    z-index: -1;
+    padding: .375rem .75rem;
+    z-index: auto;
+    color: $light-alt;
+    height: calc(1.5em + 0.75rem + 0px);
+    font-family: $font-family-base;
 }

@@ -6,19 +6,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Copy Me</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="/input-mask/masking-input.css"/>
   <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 
 <body>
 
-  <header class="bg-light bg-white position-absolute  w-100">
+  <header class="position-absolute  w-100">
     <div class="container">
       <div class="navbar">
         <a href="#" class="navbar-brand">
-          <img src="/svg/paymob-logo.svg" alt="" height="30px">
+          <img src="/svg/paymob-logo.svg" alt="" height=" 50px ">
         </a>
         <nav class="navbar-nav">
-          <a href="#" class="navlink"><span class="material-icons material-icons-outlined">
+          <a href="#" class="navlink"><span class="material-icons material-icons-outlined text-secondary d-none ">
               logout
             </span></a>
         </nav>
@@ -31,20 +32,21 @@
             <div class="col-lg-4 d-none d-lg-block">
                 <img src="/svg/login-image.svg" class="img-fluid" alt="">
             </div>
-            <div class="col-lg-3 offset-lg-1 h-100">
-                <div class="container h-100">
+            <div class="container-lg-1 d-none d-xl-block mx-0">&nbsp;</div>
+            <div class="container container-lg-4 container-xl-3 h-100 ml-lg-0">
+                <div class="h-100">
                     <form action="sale.html" class="h-100 d-flex flex-column">
-                        <div class="my-auto mb-lg-6">
+                        <div class="mt-auto mb-lg-6">
                             <div class="text-center text-lg-left">
 
-                                <h1 class="text-2md text-lg-2lg">
+                                <h1 class="text-2md text-lg-2lg text-info">
                                     Virtual Terminal
                                     <br> MOTO
                                 </h1>
-                                <p class="text-lg-2md mb-5">
+                                <p class="text-lg-2md mb-5 text-secondary font-weight-normal text-sans-alt">
                                     Mail Order / Telephone Order
                                 </p>
-                                <h2 class="text-md text-lg-lg mb-4">
+                                <h2 class="text-md text-lg-lg mb-4 text-primary">
                                     Merchant
                                 </h2>
                             </div>
@@ -66,16 +68,18 @@
                                 <input type="password" class="form-control" placeholder="Password" aria-label="Password"
                                     aria-describedby="basic-addon1">
                             </div>
-                            <a id="emailHelp" class="form-text text-muted small">Forgot Password?</a>
+                            <a id="emailHelp" class="form-text text-muted small text-right">Forgot Password?</a>
 
                         </div>
-                        <button type="submit" class="btn btn-block btn-primary mt-auto mb-5 mt-lg-0 mb-auto">Sign In</button>
+                        <button type="submit" class="btn btn-block btn-lg btn-primary mt-auto mb-5 mb-lg-auto mt-lg-0">Sign In</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-    
+    <script src="/js/jquery.min.js"></script>
+<script src="/input-mask/masking-input.js" data-autoinit="true"></script>
+<script src="/js/main.js"></script>
 </body>
 </html>

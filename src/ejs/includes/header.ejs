@@ -6,19 +6,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Copy Me</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="/input-mask/masking-input.css"/>
   <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 
 <body>
 
-  <header class="bg-light <% if(locals.login) { %>bg-white position-absolute <% } %> w-100">
+  <header class="<% if(locals.login) { %>position-absolute <% } else { %> bg-light<% } %> w-100">
     <div class="container">
       <div class="navbar">
         <a href="#" class="navbar-brand">
-          <img src="/svg/paymob-logo.svg" alt="" height="30px">
+          <img src="/svg/paymob-logo.svg" alt="" height="<% if(locals.login) { %> 50px <% } else { %>30px <% } %>">
         </a>
         <nav class="navbar-nav">
-          <a href="#" class="navlink"><span class="material-icons material-icons-outlined">
+          <a href="#" class="navlink"><span class="material-icons material-icons-outlined text-secondary<% if(locals.login) { %> d-none <% } %>">
               logout
             </span></a>
         </nav>
